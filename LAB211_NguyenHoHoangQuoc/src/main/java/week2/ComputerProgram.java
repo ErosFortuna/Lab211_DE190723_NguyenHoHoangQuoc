@@ -17,8 +17,6 @@ public class ComputerProgram {
     public ComputerProgram() {
     }
 
-    
-    
     public ComputerProgram(double numberOne, double numberTwo, String operator) {
         this.numberOne = numberOne;
         this.numberTwo = numberTwo;
@@ -91,16 +89,19 @@ public class ComputerProgram {
         return 0;
     }
 
-    public double calculateBMI(){
-        return weight/(height*height);
+    public double calculateBMI() {
+        return weight / (height * height);
     }
 
-        public double checkValidNumber(String number){
-         try {
+    public double checkValidNumber(String number) {
+        try {
             return Double.parseDouble(number);
         } catch (Exception e) {
-             System.out.println("Please input number");
-             return Double.NaN;
+            System.out.println("Please input number");
+            return Double.NaN;
         }
     }
+
+   
+
 }

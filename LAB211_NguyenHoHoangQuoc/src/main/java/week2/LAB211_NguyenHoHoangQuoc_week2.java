@@ -95,31 +95,199 @@ public class LAB211_NguyenHoHoangQuoc_week2 {
                         }
                     }
                 }
-                case 2:{
+                case 2: {
                     System.out.println("=====Calculator Shape Program=====");
                     System.out.println("Please input side width of Rectangle:");
-                    double width=Double.parseDouble(scanner.nextLine());
+                    double width = Double.parseDouble(scanner.nextLine());
                     System.out.println("Please input length of Rectangle:");
-                    double length=Double.parseDouble(scanner.nextLine());
-                    Rectangle rectangle=new Rectangle(length, width);
-                    
+                    double length = Double.parseDouble(scanner.nextLine());
+                    Rectangle rectangle = new Rectangle(length, width);
+
                     System.out.println("Please input radius of Circle:");
-                    double radius=Double.parseDouble(scanner.nextLine());
-                    Circle circle=new Circle(radius);
-                    
+                    double radius = Double.parseDouble(scanner.nextLine());
+                    Circle circle = new Circle(radius);
+
                     System.out.println("Please input side A of Triangle:");
-                    double a=Double.parseDouble(scanner.nextLine());
+                    double a = Double.parseDouble(scanner.nextLine());
                     System.out.println("Please input side B of Triangle:");
-                    double b=Double.parseDouble(scanner.nextLine());
+                    double b = Double.parseDouble(scanner.nextLine());
                     System.out.println("Please input side C of Triangle:");
-                    double c=Double.parseDouble(scanner.nextLine());
-                    Triangle triangle=new Triangle(a, b, c);
-                    
+                    double c = Double.parseDouble(scanner.nextLine());
+                    Triangle triangle = new Triangle(a, b, c);
+
                     rectangle.printResult();
                     circle.printResult();
                     triangle.printResult();
-                    
-                    
+                }
+                case 3: {
+                    int choice = 0;
+                    while (choice != 4) {
+                        System.out.println("=====calculator program=====");
+                        System.out.println("1. Addition of matrices");
+                        System.out.println("2. Subtraction of matrices");
+                        System.out.println("3. Multiplication of matrices");
+                        System.out.println("4. Exit");
+                        System.out.print("Select an option: ");
+                        choice = Integer.parseInt(scanner.nextLine());
+                        switch (choice) {
+                            case 1: {
+                                System.out.println("-----Addition-----");
+                                Matrix check = new Matrix();
+                                System.out.println("Enter row of matrix 1: ");
+                                int row = Integer.parseInt(scanner.nextLine());
+                                System.out.println("Enter column of matrix 1: ");
+                                int column1 = Integer.parseInt(scanner.nextLine());
+                                Matrix matrix1 = new Matrix(row, column1);
+                                for (int i = 0; i < matrix1.getRows(); i++) {
+                                    for (int j = 0; j < matrix1.getColumns(); j++) {
+                                        double temp=Double.NaN;
+                                        System.out.print("Enter value for element of matrix 1 [" + (i+1) + "][ " + (j+1) + "]: ");
+                                        while (Double.isNaN(temp)) {
+                                            temp=check.checkValidNumber(scanner.nextLine());
+                                            if (!Double.isNaN(temp)) {
+                                                matrix1.setElement(i, j,temp);
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                
+                                System.out.println("Enter row of matrix 2: ");
+                                int row2 = Integer.parseInt(scanner.nextLine());
+                                System.out.println("Enter column of matrix 2: ");
+                                int column2 = Integer.parseInt(scanner.nextLine());
+                                Matrix matrix2 = new Matrix(row2, column2);
+                                for (int i = 0; i < matrix2.getRows(); i++) {
+                                    for (int j = 0; j < matrix2.getColumns(); j++) {
+                                       double temp=Double.NaN;
+                                        System.out.print("Enter value for element of matrix 2 [" + (i+1) + "][ " + (j+1) + "]: ");
+                                        while (Double.isNaN(temp)) {
+                                            temp=check.checkValidNumber(scanner.nextLine());
+                                            if (!Double.isNaN(temp)) {
+                                                matrix2.setElement(i, j,temp);
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                Matrix result=matrix1.additionMatrix(matrix2);
+                                if(result==null){
+                                    System.out.println("\nmatrix 1 and matrix 2 is not equals");
+                                }else{
+                                    matrix1.displayMatrix();
+                                    System.out.println("\n +");
+                                    matrix2.displayMatrix();
+                                    System.out.println("\nResult of addition:");
+                                    result.displayMatrix();
+                                } 
+                                break;
+                            }
+                            case 2:{
+                                System.out.println("-----Subtraction-----");
+                                Matrix check = new Matrix();
+                                System.out.println("Enter row of matrix 1: ");
+                                int row = Integer.parseInt(scanner.nextLine());
+                                System.out.println("Enter column of matrix 1: ");
+                                int column1 = Integer.parseInt(scanner.nextLine());
+                                Matrix matrix1 = new Matrix(row, column1);
+                                for (int i = 0; i < matrix1.getRows(); i++) {
+                                    for (int j = 0; j < matrix1.getColumns(); j++) {
+                                        double temp=Double.NaN;
+                                        System.out.print("Enter value for element of matrix 1 [" + (i+1) + "][ " + (j+1) + "]: ");
+                                        while (Double.isNaN(temp)) {
+                                            temp=check.checkValidNumber(scanner.nextLine());
+                                            if (!Double.isNaN(temp)) {
+                                                matrix1.setElement(i, j,temp);
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                
+                                System.out.println("Enter row of matrix 2: ");
+                                int row2 = Integer.parseInt(scanner.nextLine());
+                                System.out.println("Enter column of matrix 2: ");
+                                int column2 = Integer.parseInt(scanner.nextLine());
+                                Matrix matrix2 = new Matrix(row2, column2);
+                                for (int i = 0; i < matrix2.getRows(); i++) {
+                                    for (int j = 0; j < matrix2.getColumns(); j++) {
+                                       double temp=Double.NaN;
+                                        System.out.print("Enter value for element of matrix 2 [" + (i+1) + "][ " + (j+1) + "]: ");
+                                        while (Double.isNaN(temp)) {
+                                            temp=check.checkValidNumber(scanner.nextLine());
+                                            if (!Double.isNaN(temp)) {
+                                                matrix2.setElement(i, j,temp);
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                Matrix result=matrix1.subtractionMatrix(matrix2);
+                                if(result==null){
+                                    System.out.println("\nmatrix 1 and matrix 2 is not equals");
+                                }else{
+                                    matrix1.displayMatrix();
+                                    System.out.println("\n -");
+                                    matrix2.displayMatrix();
+                                    System.out.println("\nResult of subtraction:");
+                                    result.displayMatrix();
+                                } 
+                                break;
+                            }
+                            case 3:{
+                                System.out.println("-----Multiplication-----");
+                                Matrix check = new Matrix();
+                                System.out.println("Enter row of matrix 1: ");
+                                int row = Integer.parseInt(scanner.nextLine());
+                                System.out.println("Enter column of matrix 1: ");
+                                int column1 = Integer.parseInt(scanner.nextLine());
+                                Matrix matrix1 = new Matrix(row, column1);
+                                for (int i = 0; i < matrix1.getRows(); i++) {
+                                    for (int j = 0; j < matrix1.getColumns(); j++) {
+                                        double temp=Double.NaN;
+                                        System.out.print("Enter value for element of matrix 1 [" + (i+1) + "][ " + (j+1) + "]: ");
+                                        while (Double.isNaN(temp)) {
+                                            temp=check.checkValidNumber(scanner.nextLine());
+                                            if (!Double.isNaN(temp)) {
+                                                matrix1.setElement(i, j,temp);
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                
+                                System.out.println("Enter row of matrix 2: ");
+                                int row2 = Integer.parseInt(scanner.nextLine());
+                                System.out.println("Enter column of matrix 2: ");
+                                int column2 = Integer.parseInt(scanner.nextLine());
+                                Matrix matrix2 = new Matrix(row2, column2);
+                                for (int i = 0; i < matrix2.getRows(); i++) {
+                                    for (int j = 0; j < matrix2.getColumns(); j++) {
+                                       double temp=Double.NaN;
+                                        System.out.print("Enter value for element of matrix 2 [" + (i+1) + "][ " + (j+1) + "]: ");
+                                        while (Double.isNaN(temp)) {
+                                            temp=check.checkValidNumber(scanner.nextLine());
+                                            if (!Double.isNaN(temp)) {
+                                                matrix2.setElement(i, j,temp);
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                Matrix result=matrix1.multiplicationMatrix(matrix2);
+                                if(result==null){
+                                    System.out.println("\nmatrix 1 or matrix 2 is not valid");
+                                }else{
+                                    matrix1.displayMatrix();
+                                    System.out.println("\n *");
+                                    matrix2.displayMatrix();
+                                    System.out.println("\nResult of multiplication:");
+                                    result.displayMatrix();
+                                } 
+                                break;
+                            }
+                        }
+                    }
                 }
             }
 
