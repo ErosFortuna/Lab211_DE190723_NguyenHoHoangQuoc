@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author ASUS PC
  */
-public class utilizer {
+public class Utilizer {
 
     public static int checkNumber() {
         Scanner scanner = new Scanner(System.in);

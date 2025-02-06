@@ -29,7 +29,7 @@ public class LAB211_NguyenHoHoangQuoc_week3 {
             switch (option) {
                 case 1: {
                     System.out.println("Enter of number of array :");
-                    int number = utilizer.checkNumber();
+                    int number =Utilizer.checkNumber();
                     BubbleSort bbSort = new BubbleSort(number);
                     System.out.println("array before sort: ");
                     bbSort.displayArray();
@@ -39,7 +39,7 @@ public class LAB211_NguyenHoHoangQuoc_week3 {
                 }
                 case 2: {
                     System.out.println("Enter of number of array :");
-                    int number = utilizer.checkNumber();
+                    int number =Utilizer.checkNumber();
                     QuickSort qSort = new QuickSort(number);
                     System.out.println("array before sort: ");
                     qSort.displayArray();
@@ -49,22 +49,26 @@ public class LAB211_NguyenHoHoangQuoc_week3 {
                 }
                 case 3: {
                     System.out.println("Enter of number of array :");
-                    int number = utilizer.checkNumber();
+                    int number = Utilizer.checkNumber();
                     BinarySearch bSearch = new BinarySearch(number);
                     System.out.println("the random sorted array");
                     bSearch.displayArray();
                     System.out.println("enter the number you want to search");
-                    int sNumber = utilizer.checkNumber();
-                    System.out.println("Found " + sNumber + " at the index: " + bSearch.search(sNumber, 0, number-1));
+                    int sNumber = Utilizer.checkNumber();
+                    if (bSearch.search(sNumber, 0, number - 1)==-1) {
+                        System.out.println("that number dont exist in the array");
+                    } else {
+                        System.out.println("Found " + sNumber + " at the index: " + bSearch.search(sNumber, 0, number - 1));
+                    }
                     break;
                 }
                 case 4: {
                     Stack stack = new Stack();
                     System.out.println("enter number of element you want to add");
-                    int number = utilizer.checkNumber();
+                    int number = Utilizer.checkNumber();
                     for (int i = 0; i < number; i++) {
                         System.out.println("enter the " + (i + 1) + " element");
-                        int tempData = utilizer.checkNumber();
+                        int tempData = Utilizer.checkNumber();
                         stack.push(tempData);
                     }
                     System.out.println("the stack after enter data");
