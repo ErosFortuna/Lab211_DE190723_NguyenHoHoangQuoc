@@ -49,7 +49,10 @@ public class LAB211_NguyenHoHoangQuoc_week3 {
                 }
                 case 3: {
                     System.out.println("Enter of number of array :");
-                    int number = Utilizer.checkNumber();
+                    int number;
+                    do{
+                     number= Utilizer.checkNumber();
+                    }while(number<2);
                     BinarySearch bSearch = new BinarySearch(number);
                     System.out.println("the random sorted array");
                     bSearch.displayArray();
