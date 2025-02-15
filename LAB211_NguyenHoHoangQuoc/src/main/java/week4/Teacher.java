@@ -4,13 +4,15 @@
  */
 package week4;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
  *
  * @author ASUS PC
  */
-class Teacher extends Person {
+class Teacher extends Person{
+
     private int yearInProfession;
     private String contractType;
     private double salaryCoefficient;
@@ -57,10 +59,8 @@ class Teacher extends Person {
 
     @Override
     public String toString() {
-        return super.toString()+"Teacher{" + "yearInProfession=" + yearInProfession + ", contractType=" + contractType + ", salaryCoefficient=" + salaryCoefficient + '}';
+        return super.toString() + "Teacher{" + "yearInProfession=" + yearInProfession + ", contractType=" + contractType + ", salaryCoefficient=" + salaryCoefficient + '}';
     }
-    
-    
-    
-}
 
+
+}

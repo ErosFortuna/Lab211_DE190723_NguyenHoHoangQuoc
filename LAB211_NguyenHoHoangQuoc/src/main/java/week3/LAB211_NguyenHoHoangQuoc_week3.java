@@ -36,6 +36,7 @@ public class LAB211_NguyenHoHoangQuoc_week3 {
                     System.out.println("array after sort: ");
                     bbSort.bubbleSort();
                     bbSort.displayArray();
+                    break;
                 }
                 case 2: {
                     System.out.println("Enter of number of array :");
@@ -46,6 +47,7 @@ public class LAB211_NguyenHoHoangQuoc_week3 {
                     System.out.println("array after sort: ");
                     qSort.quickSort(0, qSort.getArray().length - 1);
                     qSort.displayArray();
+                    break;
                 }
                 case 3: {
                     System.out.println("Enter of number of array :");

@@ -4,6 +4,7 @@
  */
 package week4;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -11,6 +12,7 @@ import java.util.Scanner;
  * @author ASUS PC
  */
 class Person {
+
     protected String id;
     protected String fullName;
     protected String phoneNumber;
@@ -34,9 +36,9 @@ class Person {
     }
 
     public void printInfo() {
-        System.out.println("ID: " + id + ", Full Name: " + fullName + ", Phone: " + phoneNumber + 
-                           ", Year of Birth: " + yearOfBirth + ", Major: " + major);
-       }
+        System.out.println("ID: " + id + ", Full Name: " + fullName + ", Phone: " + phoneNumber
+                + ", Year of Birth: " + yearOfBirth + ", Major: " + major);
+    }
 
     public String getId() {
         return id;
@@ -82,9 +84,5 @@ class Person {
     public String toString() {
         return "Person{" + "id=" + id + ", fullName=" + fullName + ", phoneNumber=" + phoneNumber + ", yearOfBirth=" + yearOfBirth + ", major=" + major + '}';
     }
-    
-    
-    
-    
-}
 
+}

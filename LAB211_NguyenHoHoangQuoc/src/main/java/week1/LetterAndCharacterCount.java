@@ -22,11 +22,7 @@ public class LetterAndCharacterCount {
         HashMap<String, Integer> letter = new HashMap<>();
         String[] tempLetters = sentence.split(" ");
         for (String word : tempLetters) {
-            if (letter.get(word) != null) {
-                letter.put(word, letter.get(word) + 1);
-            } else {
-                letter.put(word, 1);
-            }
+                letter.put(word, letter.getOrDefault(word, 0)+1);   
         }
         System.out.println(letter);
     }

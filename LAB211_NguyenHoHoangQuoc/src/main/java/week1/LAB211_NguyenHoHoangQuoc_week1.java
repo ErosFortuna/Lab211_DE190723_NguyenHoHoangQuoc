@@ -34,6 +34,7 @@ public class LAB211_NguyenHoHoangQuoc_week1 {
                     count.countLetter();
                     count.countCharater();
                     System.out.println("=======================================");
+                    break;
                 }
                 case 2: {
                     System.out.println("=======================================");
@@ -51,6 +52,7 @@ public class LAB211_NguyenHoHoangQuoc_week1 {
                         System.out.println("Found " + searchValue + " at index : " + array.findNumber(number, searchValue));
                     }
                     System.out.println("=======================================");
+                    break;
                 }
                 case 3: {
                     System.out.println("=======================================");
@@ -67,6 +69,7 @@ public class LAB211_NguyenHoHoangQuoc_week1 {
                         System.out.println("output value is: " + number.changeBaseNumber(in, out));
                     }
                     System.out.println("=======================================");
+                    break;
                 }
                 case 4: {
                     System.out.println("=======================================");
@@ -121,6 +124,7 @@ public class LAB211_NguyenHoHoangQuoc_week1 {
                             if (check.isPerfectSquare(b)) {
                                 System.out.print(b);
                             }
+                            break;
                         }
                         case 2: {
                             System.out.println("Enter A:");
@@ -143,29 +147,29 @@ public class LAB211_NguyenHoHoangQuoc_week1 {
                                 c = check.checkValidNumber(temp);
                             }
                             EquationSolving equation = new EquationSolving(a, b, c);
-                            int i=0;
-                            if(equation.calculateQuadraticEquation()==null){
+                            int i = 0;
+                            if (equation.calculateQuadraticEquation() == null) {
                                 System.out.println("no solution");
-                            }else if(equation.calculateQuadraticEquation().isEmpty()){
+                            } else if (equation.calculateQuadraticEquation().isEmpty()) {
                                 System.out.println("infinitely many solutions");
-                            }else{
+                            } else {
                                 System.out.print("solution: ");
-                                for(double x:equation.calculateQuadraticEquation()){
-                                    System.out.print("x"+(i+1)+" = "+x+",");
+                                for (double x : equation.calculateQuadraticEquation()) {
+                                    System.out.print("x" + (i + 1) + " = " + x + ",");
                                     i++;
                                 }
                             }
-                            if (check.isOdd(a) && check.isOdd(b)&&check.isOdd(c)) {
-                                System.out.println("\nNumber is Odd: " + a + "," + b+","+c);
-                            } else if (!check.isOdd(a) && !check.isOdd(b)&&!check.isOdd(c)) {
-                                System.out.println("\nNumber is even: " + a + "," + b+","+c);
+                            if (check.isOdd(a) && check.isOdd(b) && check.isOdd(c)) {
+                                System.out.println("\nNumber is Odd: " + a + "," + b + "," + c);
+                            } else if (!check.isOdd(a) && !check.isOdd(b) && !check.isOdd(c)) {
+                                System.out.println("\nNumber is even: " + a + "," + b + "," + c);
                             } else {
                                 System.out.print("\nNumber is Odd: ");
                                 if (check.isOdd(a)) {
                                     System.out.print(a + ",");
                                 }
                                 if (check.isOdd(b)) {
-                                    System.out.print(b+ ",");
+                                    System.out.print(b + ",");
                                 }
                                 if (check.isOdd(c)) {
                                     System.out.print(c);
@@ -175,23 +179,25 @@ public class LAB211_NguyenHoHoangQuoc_week1 {
                                     System.out.print(a + ",");
                                 }
                                 if (!check.isOdd(b)) {
-                                    System.out.print(b+ ",");
+                                    System.out.print(b + ",");
                                 }
                                 if (!check.isOdd(c)) {
                                     System.out.print(c);
-                                }     
+                                }
+
                             }
                             System.out.print("\nNumber is Perfect Square: ");
                             if (check.isPerfectSquare(a)) {
                                 System.out.print(a + ",");
                             }
                             if (check.isPerfectSquare(b)) {
-                                System.out.print(b+ ",");
+                                System.out.print(b + ",");
                             }
                             if (check.isPerfectSquare(c)) {
                                 System.out.print(c);
                             }
                         }
+                        break;
                     }
                 }
             }

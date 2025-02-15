@@ -90,6 +90,7 @@ public class LAB211_NguyenHoHoangQuoc_week4 {
                                         case 2: {
                                             System.out.println("=======================================");
                                             System.out.println(" List of Teachers ");
+                                            list.sortPeople(1);
                                             for (Person pTeacher : list.getPeople()) {
                                                 if (pTeacher instanceof Teacher) {
                                                     System.out.println(pTeacher.toString());
@@ -129,6 +130,7 @@ public class LAB211_NguyenHoHoangQuoc_week4 {
                                         case 2: {
                                             System.out.println("=======================================");
                                             System.out.println("List of Students");
+                                            list.sortPeople(2);
                                             for (Person pStudent : list.getPeople()) {
                                                 if (pStudent instanceof StudentEx2) {
                                                     System.out.println(pStudent.toString());
@@ -161,6 +163,7 @@ public class LAB211_NguyenHoHoangQuoc_week4 {
                                         case 1:
                                             System.out.print("Name: ");
                                             String name = scanner.nextLine();
+                                            list.sortPeople(3);
                                             boolean found = false;
                                             for (Person person : list.getPeople()) {
                                                 if (person.fullName.equalsIgnoreCase(name)) {
@@ -174,6 +177,7 @@ public class LAB211_NguyenHoHoangQuoc_week4 {
                                             }
                                             break;
                                         case 2:
+                                            list.sortPeople(3);
                                             System.out.println("=======================================");
                                             System.out.println(" List of Persons ");
                                             for (Person person : list.getPeople()) {
