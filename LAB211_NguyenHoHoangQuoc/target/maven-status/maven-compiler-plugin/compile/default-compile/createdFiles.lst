@@ -1,4 +1,5 @@
 week3\Utilizer.class
+week5\LargeNumber.class
 week4\Person.class
 week4\Teacher.class
 week2\Matrix.class
@@ -6,6 +7,7 @@ week2\ComputerProgram.class
 week3\QuickSort.class
 week1\LAB211_NguyenHoHoangQuoc_week1.class
 week3\BinarySearch.class
+week5\ReservationListView.class
 week2\Rectangle.class
 week3\Stack.class
 week2\LAB211_NguyenHoHoangQuoc_week2.class
@@ -16,8 +18,16 @@ week4\LAB211_NguyenHoHoangQuoc_week4.class
 week2\Triangle.class
 week4\StudentView.class
 week1\LetterAndCharacterCount.class
+week5\CourseList.class
+week5\LAB211_NguyenHoHoangQuoc_week5.class
+week5\Utilizer.class
+week5\FlightInformation.class
+week5\Reservation.class
 week3\Stack$Node.class
+week5\OnlineCourse.class
+week5\ReservationList.class
 week4\StudentEx2.class
+week5\Course.class
 week1\EquationSolving.class
 week2\Shape.class
 week3\LAB211_NguyenHoHoangQuoc_week3.class
@@ -26,4 +36,7 @@ week4\Utilizer.class
 week2\Circle.class
 week3\BubbleSort.class
 week1\LinearSearch.class
+week5\CourseListView.class
+week5\OfflineCourse.class
 week1\BaseNumberChange.class
+week4\PersonList$1.class
