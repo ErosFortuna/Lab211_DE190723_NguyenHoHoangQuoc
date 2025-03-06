@@ -68,7 +68,7 @@ public class View {
         for (Order order : oList.getOrders()) {
             System.out.println("==============================================");
             System.out.println("Customer:" + order.getName());
-            System.out.println("Product  | Quantity | Price | Amount");
+            System.out.printf("| %-17s | %-15s | %-10s | %-10s |\n", "Product", "Quantity", "Price", "Amount");
             for (Fruit fruit : order.getOFruits().getFruits()) {
                 int amount = fruit.getPrice() * fruit.getQuantity();
                 System.out.printf("|    %-17s | %-15s | %-10s |%-10s |\n", fruit.getName(), fruit.getQuantity(), fruit.getPrice() + "$", amount + "$");
@@ -83,21 +83,22 @@ public class View {
             displayAllFruit();
             System.out.println("Enter item id to choose what you want to buy");
             int choose = Utilizer.checkNumber(scanner);
-            Fruit found = null;
-
+            Fruit found=null;
             for (Fruit fruit : fList.getFruits()) {
                 if (fruit.getId() == choose) {
-                    found = fruit;
                     System.out.println("Please input quantity:");
                     int quantity;
                     while (true) {
                         quantity = Utilizer.forcePositiveNumber(scanner);
-                        if (quantity > found.getQuantity()) {
+                        if (quantity > fruit.getQuantity()) {
                             System.out.println("not enough quantity in stock,please input again");
                         } else {
                             break;
                         }
                     }
+
+                    found = new Fruit(fruit.getId(), fruit.getPrice(), quantity, fruit.getName(), fruit.getOrigin());
+
                     boolean isExist = false;
                     for (Fruit fruitTemp : temp.getFruits()) {
                         if (fruitTemp.getId() == found.getId()) {
@@ -108,14 +109,7 @@ public class View {
 
                     }
                     if (!isExist) {
-                        Fruit fruitForCart = new Fruit(
-                                found.getId(),
-                                found.getPrice(),
-                                quantity,
-                                found.getName(),
-                                found.getOrigin()
-                        );
-                        temp.addFruit(fruitForCart);
+                        temp.addFruit(found);
                     }
                     fruit.setQuantity(fruit.getQuantity() - quantity);
                     break;
@@ -131,7 +125,7 @@ public class View {
             choice = Utilizer.getValid2Input(scanner, "Y", "N");
             if (choice.equalsIgnoreCase("n")) {
                 int sum = 0;
-                System.out.println("Product | Quantity | Price | Amount");
+                System.out.printf("%-10s | %-8s | %-6s | %-6s\n", "Product", "Quantity", "Price", "Amount");
                 for (Fruit fruitOrder : temp.getFruits()) {
                     int amount = fruitOrder.getPrice() * fruitOrder.getQuantity();
                     System.out.printf("%-8s | %-8d | %-5s | %-5s\n", fruitOrder.getName(), fruitOrder.getQuantity(), fruitOrder.getPrice() + "$", amount + "$");
